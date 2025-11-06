@@ -16,16 +16,27 @@ Instructions:
 """
 
 # TODO: Create the datasets - up to you to fill in the data
-temperatures = []
-city_population = {}
+temperatures = [22.5, 18.3, 25.7, 15.2, 28.9, 19.8, 23.1]  # 7 days for one week
+city_population = {
+    "Samarkand": 546000,
+    "Andijan": 458000,
+    "Navoiy": 134000,
+    "Buxoro": 285000,
+    "Jizzax": 179000,
+    "Toshkent": 2570000,
+    "Namangan": 626000
+}
 
 # TODO: Compute aggregates
-average_temperature = 0
-largest_city = ""
-largest_population = 0
-total_population = 0
+average_temperature = sum(temperatures) / len(temperatures)
+largest_city = max(city_population, key=city_population.get)
+largest_population = city_population[largest_city]
+smallest_city = min(city_population, key=city_population.get)
+smallest_population = city_population[smallest_city]
+total_population = sum(city_population.values())
 
 # TODO: Print results
-print("Average temperature:", average_temperature)
+print("Average temperature:", round(average_temperature, 2))
 print("Largest city:", largest_city, "-", largest_population)
+print("Smallest city:", smallest_city, "-", smallest_population)
 print("Total population:", total_population)
