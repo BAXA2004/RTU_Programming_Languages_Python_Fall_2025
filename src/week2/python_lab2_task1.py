@@ -29,9 +29,9 @@ city_population = {
 
 # TODO: Compute aggregates
 average_temperature = sum(temperatures) / len(temperatures)
-largest_city = max(city_population, key=city_population.get)
+largest_city = max(city_population, key=lambda k: city_population[k])
 largest_population = city_population[largest_city]
-smallest_city = min(city_population, key=city_population.get)
+smallest_city = min(city_population, key=lambda k: city_population[k])
 smallest_population = city_population[smallest_city]
 total_population = sum(city_population.values())
 
